@@ -1,0 +1,281 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,
+    "Noto Sans", sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", Courier, monospace;
+
+  /* Dark Mode (default) */
+  --color-primary: #10b981;
+  --color-primary-foreground: #ffffff;
+  --color-secondary: #1e293b;
+  --color-secondary-foreground: #f1f5f9;
+  --color-accent: #06b6d4;
+  --color-background: #0f172a;
+  --color-foreground: #f1f5f9;
+  --color-muted: #475569;
+  --color-muted-foreground: #94a3b8;
+  --color-border: #334155;
+  --color-input: #1e293b;
+  --color-ring: #06b6d4;
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-error: #ef4444;
+  --color-info: #06b6d4;
+  --radius: 0.5rem;
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    color-scheme: dark;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    line-height: 1.6;
+    font-family: var(--font-sans);
+  }
+
+  /* Light Mode */
+  html.light {
+    color-scheme: light;
+    --color-primary: #059669;
+    --color-primary-foreground: #ffffff;
+    --color-secondary: #f8fafc;
+    --color-secondary-foreground: #1e293b;
+    --color-accent: #0891b2;
+    --color-background: #ffffff;
+    --color-foreground: #1e293b;
+    --color-muted: #cbd5e1;
+    --color-muted-foreground: #64748b;
+    --color-border: #e2e8f0;
+    --color-input: #f1f5f9;
+    --color-ring: #0891b2;
+    --color-success: #059669;
+    --color-warning: #d97706;
+    --color-error: #dc2626;
+    --color-info: #0891b2;
+  }
+
+  /* Typography */
+  h1 {
+    font-size: 2.25rem;
+    font-weight: bold;
+    line-height: 2.5rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    line-height: 2rem;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+    font-weight: bold;
+    line-height: 1.75rem;
+  }
+
+  h4,
+  h5,
+  h6 {
+    font-size: 1.125rem;
+    font-weight: 600;
+  }
+
+  p {
+    line-height: 1.625;
+  }
+
+  a {
+    color: var(--color-accent);
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+}
+
+/* Removed all @apply custom component classes - using inline Tailwind utilities instead */
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes pulse-subtle {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-in;
+}
+
+.animate-slide-in {
+  animation: slideIn 0.3s ease-out;
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 2s ease-in-out infinite;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-muted);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-muted-foreground);
+}
+
+
+.content-wrapper {
+  max-width: 100% !important;
+  line-height: 1.7 !important;
+  color: #333 !important;
+  font-size: 16px !important;
+}
+
+.content-wrapper h1,
+.content-wrapper h2,
+.content-wrapper h3,
+.content-wrapper h4,
+.content-wrapper h5,
+.content-wrapper h6 {
+  font-weight: 600 !important;
+  color: #111 !important;
+  margin: 1rem 0 0.5rem !important;
+  line-height: 1.3 !important;
+}
+
+.content-wrapper p {
+  margin: 0.75rem 0 !important;
+}
+
+.content-wrapper a {
+  color: #1d4ed8 !important;
+  text-decoration: none !important;
+}
+
+.content-wrapper a:hover {
+  text-decoration: underline !important;
+}
+
+.content-wrapper img {
+  max-width: 100% !important;
+  height: auto !important;
+  border-radius: 10px !important;
+  display: block !important;
+  margin: 1rem 0 !important;
+}
+
+.content-wrapper ul,
+.content-wrapper ol {
+  list-style-position: outside !important;
+  margin: 1rem 0 1.25rem 1.5rem !important;
+  padding-left: 1.25rem !important;
+}
+
+.content-wrapper ul {
+  list-style-type: disc !important;
+}
+
+.content-wrapper ol {
+  list-style-type: decimal !important;
+}
+
+.content-wrapper table {
+  width: 100% !important;
+  border-collapse: collapse !important;
+  margin: 1rem 0 !important;
+}
+
+.content-wrapper th,
+.content-wrapper td {
+  border: 1px solid #ccc !important;
+  padding: 8px !important;
+  text-align: left !important;
+}
+
+.content-wrapper th {
+  background: #f3f4f6 !important;
+  font-weight: bold !important;
+}
+
+.content-wrapper blockquote {
+  border-left: 4px solid #3b82f6 !important;
+  padding-left: 1rem !important;
+  margin: 1rem 0 !important;
+  color: #555 !important;
+  font-style: italic !important;
+}
+
+.content-wrapper pre {
+  background: #1f2937 !important;
+  color: #fff !important;
+  padding: 10px !important;
+  overflow-x: auto !important;
+  border-radius: 8px !important;
+  margin: 1rem 0 !important;
+}
+
+.content-wrapper code {
+  background: #e5e7eb !important;
+  padding: 2px 4px !important;
+  border-radius: 4px !important;
+  font-family: monospace !important;
+}
+
+.content-wrapper hr {
+  margin: 2rem 0 !important;
+  border: none !important;
+  border-bottom: 1px solid #ddd !important;
+}
+
+.content-wrapper strong,
+.content-wrapper b {
+  font-weight: 600 !important;
+  color: #111 !important;
+}
+
+.content-wrapper em,
+.content-wrapper i {
+  font-style: italic !important;
+}
