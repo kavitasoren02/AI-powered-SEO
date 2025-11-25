@@ -129,3 +129,20 @@ npm run build
 - [ ] Theme persists across sessions
 - [ ] Mobile responsiveness verified
 ---
+
+## Screenshots
+
+### Dashboard
+![Dashboard](./Images/Dashboard.png)
+
+### View Article
+![View Article](./Images/View%20Article.png)
+
+### Edit Article
+![Edit Article](./Images/Edit%20Article.png)
+
+### Publish Article
+![Publish Article](./Images/Publish%20Article.png)
+
+### Draft Article
+![Draft Article](./Images/Publish%20Article.png)
